@@ -26,43 +26,79 @@ html {
     color:inherit;
   
   }
+
+  .sticky {
+    position: sticky;
+    z-index:2;
+  }
   
   /* Header Section */
+
+    #header{
+      position:sticky;
+      top: 0;
+      z-index: 100;
+    }
   
    #navbar{
+     padding-left: 13.25%;
+     padding-right: 13.25%;
      display:flex;
      align-items:center;
      justify-content:right;
-     margin-top:20px;
-     background:linear-gradient(-90deg, black 15%, #f3f3f3 80%);
+     background:linear-gradient(180deg, rgba(0, 0, 0, 0.9) 70%, rgb(212, 71, 11)90% );
      width:100%;
      height:60px;
-     border-radius:20px;
+     -webkit-backdrop-filter: blur(5px);
+     backdrop-filter: blur(5px);
+
    }
   
    .nav-link{
     text-decoration:none;
-    text-align:left;
-    float:left;
+    text-align:center;
     color:white;
     display:flex;
     align-items:center;
     justify-content:center;
     font-size:1.2em;
-    width:10vh;
+    width:10%;
     height:60px;
     padding:2vh 0vh 2vh 0vh;
     margin-left:0vh;
+    animation:nav-color-fade-out 0.2s ease-in-out forwards; 
+
   }
   
   .nav-link:hover{
-    animation:color-fade-in 0.2s ease-in-out forwards; 
+    animation:nav-color-fade-in 0.2s ease-in-out forwards; 
   }
-  
-  .nav-link:last-of-type:hover{
-    border-radius: 0 20px 20px 0;
-    border:none;
+
+  @keyframes nav-color-fade-in{
+    0%{
+      color:white;
+      background-color:linear-gradient(180deg, rgba(0, 0, 0, 0.9) 70%, rgb(212, 71, 11)90% );
+      }
+ 
+   100%{
+     color:black;
+     background-color:rgb(212, 71, 11);
+     opacity: 90%;
+   }
   }
+ 
+    @keyframes nav-color-fade-out{
+    0%{
+      color:black;
+      background-color:rgb(212, 71, 11);
+      }
+ 
+   100%{
+     color:white;
+     background-color:linear-gradient(180deg, rgba(0, 0, 0, 0.9) 70%, rgb(212, 71, 11)90% );
+   }
+  }
+
    
   /* Header-Responsive*/
   
@@ -101,9 +137,9 @@ html {
   }
   
   .hero-title{
-    letter-spacing: -.02em;
-    font-size: 6.375em;
-    line-height: 0.1;
+    letter-spacing: -0.07em;
+    font-size: 3.375em;
+    line-height: 0;
   }
   
   .hero-title h1{
@@ -111,7 +147,14 @@ html {
   }
 
   .hero-title h1:first-of-type{
+    letter-spacing: -0.07em;
     animation: fadeIn 0.3s ease-in forwards;
+    font-size: 4em;
+  }
+
+  #apellido {
+    font-size: 1.4em;
+    color:rgb(212, 71, 11);
   }
 
   .hero-title h1:last-of-type{
@@ -120,6 +163,7 @@ html {
   }
 
   .hero-paragraph{
+    margin-left:10px;
     width: 50%;
     min-width: 460px;
     max-width: 100%;
@@ -230,10 +274,9 @@ html {
      display:flex;
      align-items:center;
      justify-content:left;
-     background:linear-gradient(90deg, black 15%, #f3f3f3 80%);
+     background:black;
      width:calc(100% + 2%);
      height:60px;
-     border-radius:20px;
      color:white;
      margin-left:-2%;
      padding-left:2%;
@@ -253,9 +296,9 @@ html {
    }
   
    .project-tile{
-     width:100%;
-     height:550px;
-     max-height:500px;
+     width:400px;
+     height:400px;
+     max-height:600px;
      max-width:600px;
      background-color:black;
      display:flex;
@@ -271,9 +314,10 @@ html {
   
    .project-picture{
      width:100%;
-     height:90%;
+     height:100%;
      background-color:gray;
      border-bottom:white solid;
+     opacity: 85%;
    }
   
    .project-tile h1{
@@ -288,7 +332,7 @@ html {
    }
   
    .rounded-border{
-     border-top-right-radius:10px;
+     border-radius:10px;
    }
   
    @keyframes color-fade-in{
@@ -299,14 +343,14 @@ html {
   
     100%{
       color:black;
-      background-color:orange;
+      background-color:rgb(212, 71, 11);
     }
    }
   
      @keyframes color-fade-out{
      0%{
        color:black;
-       background-color:orange;
+       background-color:rgb(212, 71, 11);
        }
   
     100%{
@@ -409,13 +453,13 @@ html {
      }
   
      100%{
-       border:solid orange;
+       border:solid rgb(212, 71, 11);
      }
    }
   
    @keyframes border-color-fade-out{
      0%{
-       border:solid orange;
+       border:solid rgb(212, 71, 11);
      }
   
      100%{
